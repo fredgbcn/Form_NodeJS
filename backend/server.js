@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res)=>{
-    res.render('index.ejs')
+app.get('/api', (req, res)=>{
+    res.json({"users": ["userOne", "userTwo", "userThree", "userFour"]})
 })
-app.listen(3000)
+app.listen(3001, () =>{
+    console.log("Hey it works")
+})
